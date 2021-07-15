@@ -1,0 +1,436 @@
+{
+  "intents": [
+    {
+      "intent": "اكل",
+      "examples": [
+        {
+          "text": "اقدر اطلب اكل"
+        },
+        {
+          "text": "اكل"
+        },
+        {
+          "text": "ايش تقدمو اكل"
+        },
+        {
+          "text": "طعام"
+        },
+        {
+          "text": "عندكم وجبات"
+        },
+        {
+          "text": "فيه اكل"
+        },
+        {
+          "text": "هل عندكم اكل"
+        },
+        {
+          "text": "وجبة"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "اهلا"
+        },
+        {
+          "text": "اهلين"
+        },
+        {
+          "text": "سلام"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "هااااي"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلا"
+        },
+        {
+          "text": "هلو"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "شكر",
+      "examples": [
+        {
+          "text": "اشكرك"
+        },
+        {
+          "text": "الله يعطيك العافية"
+        },
+        {
+          "text": "ثانكس"
+        },
+        {
+          "text": "جزاك الله خير"
+        },
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "شكرا لك"
+        },
+        {
+          "text": "ما قصرت"
+        },
+        {
+          "text": "متشكر"
+        },
+        {
+          "text": "متشكرة"
+        },
+        {
+          "text": "مشكور"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "مقاعد",
+      "examples": [
+        {
+          "text": "رقم مقعدي"
+        },
+        {
+          "text": "على اي كرسي اجلس"
+        },
+        {
+          "text": "فين اقدر اجلس"
+        },
+        {
+          "text": "فين الكرسي"
+        },
+        {
+          "text": "مقعد"
+        },
+        {
+          "text": "ممكن اعرف رقم مقعدي"
+        },
+        {
+          "text": "وين مقعدي"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "زائر",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "‎‫‎‫‎‫‎‫‎‫‎‫‎‫‎‫‎‫‎‫ز‬‎ا‬‎ئ‬‎ر‬‎",
+          "synonyms": [
+            "زائر",
+            "زائرة",
+            "زوار",
+            "زيارة",
+            "ضيف",
+            "ضيفة",
+            "مدعو",
+            "مدعوة"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "موظف",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "‎‫‎‫‎‫‎‫‎‫م‬‎و‬‎ظ‬‎ف‬‎",
+          "synonyms": [
+            "مشرف",
+            "مشرفة",
+            "منظم",
+            "منظمة",
+            "موظف",
+            "موظفة",
+            "وظيفة"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "parent": "node_3_1626348647422",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1626348675224"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1626348675530",
+      "context": {
+        "number": "@انثى:انثى"
+      },
+      "conditions": "@انثى:انثى",
+      "event_name": "input",
+      "dialog_node": "handler_3_1626348675541"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ممكن تزودني برقم الحجز المكون من 4 ارقام من فضلك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_1_1626348675530",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1626348675541",
+      "previous_sibling": "handler_3_1626348675541"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "العفو واجبي ... اي خدمة ثانية؟"
+              },
+              {
+                "text": "يا اهلا .. اي خدمة ثانية؟"
+              },
+              {
+                "text": "تشرفت بخدمتك .. اي خدمة ثانية؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#شكر",
+      "dialog_node": "node_1_1626352123770",
+      "previous_sibling": "node_1_1626352831917"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "تفضل هذي قائمة الطعام",
+            "source": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/menu-poster-template-c4b2a46b31cb0acba3ea7cc619a72b17_screen.jpg?ts=1561491234",
+            "description": "تقدر تطلب عن طريق مسح الكود على الطاولة",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#اكل",
+      "dialog_node": "node_1_1626352831917",
+      "previous_sibling": "node_7_1626348772052"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يا هلا والله"
+              },
+              {
+                "text": "اهلا وسهلا"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_2_1626348603483",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "حضرتك زائر ولا موظف؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#مقاعد",
+      "dialog_node": "node_3_1626348647422",
+      "previous_sibling": "node_2_1626348603483"
+    },
+    {
+      "type": "standard",
+      "title": "تحديد المقعد",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@زائر || @موظف",
+      "dialog_node": "node_7_1626348772052",
+      "previous_sibling": "node_3_1626348647422"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يمكنك اختيار اي مقعد في قسم الزوار على اليمين"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1626348772052",
+      "conditions": "@زائر",
+      "dialog_node": "response_4_1626350949970"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يمكنك اختيار اي مقعد في قسم الموظفين على اليسار"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1626348772052",
+      "conditions": "@موظف",
+      "dialog_node": "response_5_1626350971827",
+      "previous_sibling": "response_4_1626350949970"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1626348647422",
+      "variable": "$number",
+      "dialog_node": "slot_1_1626348675530",
+      "previous_sibling": "handler_2_1626348675224"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_1_1626352123770",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مرحبا، كيف يمكنني مساعدتك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "كس امك"
+    },
+    {
+      "text": "كسمك"
+    },
+    {
+      "text": "يا قحبة"
+    }
+  ],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "اول مهارة",
+  "language": "ar",
+  "description": ""
+}
