@@ -194,7 +194,19 @@ input:checked + .slider:before {
   <input type="hidden" name="selected" value=" " id="slc">
 
   </form>
-  
+  <script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "5c6d0b1a-6f6b-4109-932f-fb638f9ac036", // The ID of this integration.
+      region: "eu-de", // The region your integration is hosted in.
+      serviceInstanceID: "d219fdb3-36ed-440a-816c-f2e7d097f5e8", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
 </body>
 </html>
 
