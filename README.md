@@ -27,7 +27,7 @@ you can find English description below
 
 7 - query_dir.php ملف يسترجع اخر اتجاه مدخل من المستخدم لقاعدة البيانات مع رابط للرجوع الى واجهة لوحة التحكم الرئيسية
 
-وتم دمج المهمة الثالثة (الدردشة الآلية) مع هذا الموقع للتفاصيل : 
+وتم دمج المهمة الثالثة (الدردشة الآلية) مع هذا الموقع للتفاصيل : https://github.com/mohashem95/s-m-IOT-task-2-3/blob/main/README(for%20task3).md 
 
 
 =============================================================================================
@@ -56,4 +56,4 @@ Project files:
 
 7 - query_dir.php  retrives last row of the directions table and shows it to the user, with a link to get back to the control panel.
 
-and task 3 (chatbot) is embeded within this repo. for details: 
+and task 3 (chatbot) is embeded within this repo. for details: https://github.com/mohashem95/s-m-IOT-task-2-3/blob/main/README(for%20task3).md
