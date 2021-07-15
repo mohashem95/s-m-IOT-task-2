@@ -27,6 +27,8 @@ you can find English description below
 
 7 - query_dir.php ملف يسترجع اخر اتجاه مدخل من المستخدم لقاعدة البيانات مع رابط للرجوع الى واجهة لوحة التحكم الرئيسية
 
+وتم دمج المهمة الثالثة (الدردشة الآلية) مع هذا الموقع للتفاصيل : 
+
 
 =============================================================================================
 English
@@ -53,3 +55,5 @@ Project files:
 6 - insert_dir.php recieves clicked button value and inserts the first letter to the db (example: when user clicks right the letter r will be inserted into db), if there is no errors it will navigate to a page contains a text message that the data saved, link to get back to the control panel, link to show the last row of the db.
 
 7 - query_dir.php  retrives last row of the directions table and shows it to the user, with a link to get back to the control panel.
+
+and task 3 (chatbot) is embeded within this repo. for details: 
